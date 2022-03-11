@@ -1,16 +1,18 @@
 <template>
   <li>
-    <nuxt-link :to="{name:'carts-id' , params:{id:cart.id}}" class="context-container">
-        <img :src="cart.image" />
-        <div class="card-title">{{cart.brand}} {{cart.Version}}</div>
-        <div>車齡{{cart.age}}年</div>
+    <nuxt-link :to="{name:'cars-id' , params:{id:car.id}}" class="context-container">
+      <div class="img-wrapper"> 
+        <img :src="car.image" />
+      </div>
+        <div class="card-title">{{car.brand}} {{car.Version}}</div>
+        <div>車齡{{car.age}}年</div>
     </nuxt-link>
   </li>
 </template>
 <script>
 export default {
   props: {
-      cart:{
+      car:{
           type: Object,
           required: true,
       }
@@ -25,6 +27,12 @@ li {
   height: 100%;
   color:var(--primary-text-color);
   background-color: var(--primary-bg-color);
+}
+.img-wrapper{
+  width:100%;
+  min-height:150px;
+  height:100%;
+  background-color:var(--mute-color);
 }
 .context-container{
     display:block;

@@ -1,9 +1,9 @@
 <template>
   <div>
     <Navbar />
-    <div class="cart-list-container">
-      <ul class="cart-card-container">
-        <CartCard  v-for="cart in carts" :key="cart.id" :cart="cart" />
+    <div class="car-list-container">
+      <ul class="car-card-container">
+        <CarCard  v-for="car in cars" :key="car.id" :car="car" />
       </ul>
     </div>
   </div>
@@ -11,19 +11,19 @@
 <script>
 export default {
     props:{
-        carts:{
+        cars:{
             type:Array,
             requred:true
         }
     }
-  
+    
 };
 </script>
 <style lang="scss" scoped>
-.cart-list-container {
+.car-list-container {
   padding: 2rem;
 }
-.cart-card-container {
+.car-card-container {
   grid-gap: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

@@ -1,11 +1,12 @@
 <template>
   <div class="container">
-    <img :src="cart.image" />
-    <div class="title"> {{cart.brand}} {{cart.Version}}</div>
-    <div class="age">車齡 {{cart.age}}年</div>
+    <img :src="car.image" />
+    <div class="title"> {{car.brand}} {{car.Version}}</div>
+    <div class="age">車齡 {{car.age}}年</div>
+    <div class="price">${{car.price}} </div>
+    <div class="description">{{car.description}} </div>
     <div class="btn-wrapper">
-
-      <baseButton @handleClick="goBack">返回首頁 </baseButton>
+      <baseButton @handleClick="backToCarIndex">返回首頁 </baseButton>
     </div>
   </div>
 </template>
@@ -13,39 +14,39 @@
 <script>
 export default {
   props: {
-    carts: {
+    cars: {
       type: Array,
       required: true,
     },
   },
   data(){
     return{
-      cart:{}
+      car:{}
     }
   },
   watch:{
-    carts(){
+    cars(){
       const {id }=this.$route.params;
-      this.loadCartData(id);
+      this.loadcarData(id);
     }
   },
   created(){
     const {id }=this.$route.params;
-    this.loadCartData(id);
+    this.loadcarData(id);
   },
   methods:{
-    loadCartData(id){
-      this.carts.forEach(cart => {
-        console.log(cart.id==id)
-       if(cart.id==id){
-         this.cart={
-           ...cart
+    loadcarData(id){
+      this.cars.forEach(car => {
+        console.log(car.id==id)
+       if(car.id==id){
+         this.car={
+           ...car
          }
        }
       });
     },
-    goBack(){
-      this.$router.push('/carts');
+    backToCarIndex(){
+      this.$router.push('/cars');
     }
   }
 };
@@ -63,10 +64,12 @@ export default {
   .title{
     font-size:3.5rem;
   }
-  .age{
+  .age,.price{
     font-size:2rem;
   }
-
+  .description{
+    font-size:1.5rem;
+  }
 }
 .btn-wrapper{
   position:absolute;

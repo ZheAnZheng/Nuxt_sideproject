@@ -9,7 +9,7 @@
     <transition name="btn" mode="out-in">
         <!-- loading-box 為了btn未出現時可以替補位置，讓版面不會突然變版 -->
         <div class="loading-box" v-if="isLoading"></div>
-        <nuxt-link class="btn-wrapper" to="/carts"  v-else>
+        <nuxt-link class="btn-wrapper" to="/cars"  v-else>
             <baseButton> 進入網站 </baseButton>
         </nuxt-link>
     </transition>

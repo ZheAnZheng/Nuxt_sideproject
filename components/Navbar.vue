@@ -2,10 +2,10 @@
   <nav>
     <ul>
       <li>
-        <nuxt-link to="/carts">首頁</nuxt-link>
+        <nuxt-link to="/cars">首頁</nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/carts/new">新增</nuxt-link>
+        <nuxt-link to="/cars/new">新增</nuxt-link>
       </li>
     </ul>
   </nav>
