@@ -1,5 +1,5 @@
 <template>
-  <nuxt-child :cars="cars" :formItems="formItems" @handleSubmit="addCar" />
+  <nuxt-child :cars="cars" :formItems="formItems" :secondFormItems="secondFormItems" @handleSubmit="addCar" />
 </template>
 
 <script>
@@ -70,6 +70,44 @@ export default {
           value: "",
         },
       ],
+      secondFormItems:[
+        {
+          id: 0,
+          name: "照片",
+          type: "file",
+          value: "",
+        },
+        {
+          id: 1,
+          name: "品牌",
+          type: "text",
+          value: "",
+        },
+        {
+          id: 2,
+          name: "型號",
+          type: "text",
+          value: "",
+        },
+        {
+          id: 3,
+          name: "車齡",
+          type: "number",
+          value: "",
+        },
+        {
+          id: 4,
+          name: "價格",
+          type: "checkbox",
+          value: "",
+        },
+        {
+          id: 5,
+          name: "描述",
+          type: "text",
+          value: "",
+        },
+      ]
     };
   },
   methods: {

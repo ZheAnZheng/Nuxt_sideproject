@@ -1,25 +1,42 @@
 <template>
   <div class="container">
+    
     <form @submit.prevent.stop="handleSubmit">
-      <BaseInput v-for="item in formItems" :key="item.id" :inputData="item" />
+      <BaseInput v-for="item in modeFormItems" :key="item.id" :inputData="item" />
       <BaseButton class="form-btn">提交</BaseButton>
     </form>
     <div class="btn-wrapper">
-      <BaseButton @handleClick="backToCarIndex">返回首頁</BaseButton>
+      <BaseButton class="btn" @handleClick="toggleMode">輸入模式</BaseButton>
+      <BaseButton class="btn" @handleClick="backToCarIndex">返回首頁</BaseButton>
     </div>
   </div>
 </template>
 <script>
 export default {
+  //實作prop切換input type，
   props: {
     formItems: {
       type: Array,
       required: true,
     },
+    secondFormItems:{
+      secondFormItems:{
+        type:Array,
+      }
+    }
+  },
+  data(){
+    return{
+      mode:'main'
+    }
   },
   computed: {
-    items() {
-      return this.formItems;
+    modeFormItems() {
+      if(this.mode==='main'){
+        return this.formItems;
+      }else{
+        return this.secondFormItems;
+      }
     },
   },
   methods:{
@@ -29,6 +46,13 @@ export default {
     handleSubmit(){
       this.$emit('handleSubmit');
       this.backToCarIndex()
+    },
+    toggleMode(){
+      if(this.mode==='main'){
+          this.mode='second'
+      }else{
+        this.mode='main'
+      }
     }
   }
 };
@@ -39,7 +63,7 @@ export default {
   height: 100%;
 }
 form {
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
@@ -56,10 +80,17 @@ form {
   margin-top: 4rem;
 }
 .btn-wrapper {
+
   position: sticky;
+  display:flex;
+  flex-direction:column;
+  row-gap:1rem;
   bottom: 5%;
   width: 50px;
-  height: 50px;
   left: 92%;
+  .btn{
+    width:50px;
+    height:50px;
+  }
 }
 </style>

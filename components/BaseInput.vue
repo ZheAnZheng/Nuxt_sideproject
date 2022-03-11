@@ -38,7 +38,6 @@ export default {
       image: "",
     };
   },
-
   computed: {
     isSelect() {
       if (this.inputData.type === "select") {
@@ -49,6 +48,7 @@ export default {
     },
   },
   methods: {
+    //因為只是本地的圖片，所以沒辦法真的新增圖片
     handlechange(e) {
       const { files } = e.target;
       if (!files) {
@@ -90,7 +90,7 @@ input[type="text"] {
   background-color: var(--primary-bg-color);
 }
 input[type="text"] {
-  width: 100%;
+  width: 50%;
 }
 select {
   &:invalid {
