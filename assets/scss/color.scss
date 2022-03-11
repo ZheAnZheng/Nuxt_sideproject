@@ -1,0 +1,13 @@
+:root {
+
+    --primary-bg-color:rgb(243, 243, 243);
+    --primary-text-color:rgb(32, 32, 32);
+    --btn-text-color:rgb(255, 255, 255);
+    --btn-bg-color:rgb(100, 179, 97);
+    // --btn-hover-text-color:rgb(255, 255, 255);
+    --btn-hover-bg-color:rgb(62, 112, 60);
+}
+
+:root[data-theme="dark"] {
+
+}
