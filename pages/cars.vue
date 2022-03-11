@@ -1,5 +1,10 @@
 <template>
-  <nuxt-child :cars="cars" :formItems="formItems" :secondFormItems="secondFormItems" @handleSubmit="addCar" />
+  <nuxt-child
+    :cars="cars"
+    :formItems="formItems"
+    :secondFormItems="secondFormItems"
+    @handleSubmit="addCar"
+  />
 </template>
 
 <script>
@@ -70,7 +75,7 @@ export default {
           value: "",
         },
       ],
-      secondFormItems:[
+      secondFormItems: [
         {
           id: 0,
           name: "照片",
@@ -107,7 +112,7 @@ export default {
           type: "text",
           value: "",
         },
-      ]
+      ],
     };
   },
   methods: {

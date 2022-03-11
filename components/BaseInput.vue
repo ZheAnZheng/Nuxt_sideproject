@@ -65,7 +65,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .form-group {
-  font-size: 2rem;
+  font-size: 1.5rem;
   label {
     display: block;
   }
@@ -87,7 +87,10 @@ input[type="text"] {
   border: unset;
   height: 30px;
   border-bottom: 2px solid var(--primary-color);
-  background-color: var(--primary-bg-color);
+  background-color: var(--form-bg-color);
+  &:focus {
+    border-bottom: 2px solid var(--btn-hover-bg-color);
+  }
 }
 input[type="text"] {
   width: 50%;

@@ -1,9 +1,10 @@
 @font-face {
-    font-family: "Smooch Sans";
-    src: local("Smooch Sans"),
-     url(~/assets/Smooch_Sans/SmoochSans-VariableFont_wght.ttf) format("truetype");
+  font-family: "Smooch Sans";
+  src: local("Smooch Sans"),
+    url(~/assets/Smooch_Sans/SmoochSans-VariableFont_wght.ttf)
+      format("truetype");
 }
 
 html {
-    font-family: "Smooch Sans", sans-serif;
+  font-family: "Smooch Sans", sans-serif;
 }
