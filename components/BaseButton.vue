@@ -1,5 +1,6 @@
 <template>
-    <button class="primary-btn">
+    <!-- 事件交由使用button的component定義，只要發出事件就好 -->
+    <button class="primary-btn" @click="$emit('handleClick')">
         <slot></slot>
     </button>   
 </template>
