@@ -68,11 +68,9 @@ export default {
   height: 100%;
 }
 form {
-  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
-  height: 100%;
   width: 75%;
   max-width: 700px;
   background-color: var(--form-bg-color);
