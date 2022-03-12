@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <NuxtLogo/>
     <div class="title">
       <TransitionGroup @afterEnter="addCount" name="fade" tag="div" appear>
         <span v-for="word in words" :key="word">{{ word }}</span>
@@ -77,7 +78,7 @@ export default {
 }
 .fade-enter {
   opacity: 0;
-  transform: translateY(-200px);
+  transform: translateY(-50px);
 }
 .fade-enter-active {
   transition: all 1s cubic-bezier(0.38, 0.09, 0.37, 1.35);
